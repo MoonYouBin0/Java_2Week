@@ -1,10 +1,12 @@
-package java_study;
+package week3;
 
 import java.util.Scanner;
 
 public class Student {
     int id, year, score;
-    String name, number;
+    public String name;
+    String number;
+
 
     boolean matches(String kwd) {
         if (kwd.chars().allMatch(Character::isDigit)) {
@@ -49,5 +51,9 @@ public class Student {
     public void print() {
         System.out.printf("%d %s (%d학년) %s - %d점", id, name, year, number, score);
         System.out.println();
+    }
+
+    public boolean matchesId(int n) {
+        return false;
     }
 }

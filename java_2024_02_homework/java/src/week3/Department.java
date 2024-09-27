@@ -1,4 +1,4 @@
-package java_study;
+package week3;
 
 import java.util.Scanner;
 import java.util.ArrayList;
