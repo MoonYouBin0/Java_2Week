@@ -1,4 +1,4 @@
-package java_2024_02_homework.java_2week.week2;
+package week2;
 
 import java.util.Random;
 

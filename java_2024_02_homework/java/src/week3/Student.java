@@ -1,10 +1,11 @@
-package java_study;
+package week3;
 
 import java.util.Scanner;
 
 public class Student {
     int id, year, score;
-    String name,number;
+    public String name;
+    String number;
 
     boolean matches(String kwd){
         if(name.contains(kwd))
@@ -33,4 +34,7 @@ public class Student {
         System.out.println();
     }
 
+    public boolean matchesId(int n) {
+        return false;
+    }
 }
