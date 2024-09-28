@@ -10,11 +10,11 @@ public class Lecture {
     String day, time;
 
     public Lecture(String code) {
-
+        this.code = code;
     }
 
-    public boolean macheslec(String lecName) {
-        return lectureName.equals(lecName);
+    public boolean macheslec(String code) {
+        return ((this.code).equals(code));
     }
 
     public void read(Scanner scan){
@@ -26,5 +26,6 @@ public class Lecture {
     }
 
     public void print() {
+        System.out.printf("\t[%s] %s %d학년 (%s %s)\n", code, lectureName, year, day, time);
     }
 }

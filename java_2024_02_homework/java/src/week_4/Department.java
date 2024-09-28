@@ -5,13 +5,12 @@ import java.util.Scanner;
 
 public class Department {
     ArrayList<Student> stList = new ArrayList<>();
-    ArrayList<Team> teamList = new ArrayList<>();
     ArrayList<Lecture> lecList = new ArrayList<>();
     Scanner scan = new Scanner(System.in);
 
-    public Lecture findLecture(String lecName) {
-        for (Lecture lec : lecList) {
-            if(lec.macheslec(lecName))
+    public Lecture findLecture(String code) {
+        for(Lecture lec : lecList){
+            if(lec.macheslec(code))
                 return lec;
         }
         return null;
@@ -30,9 +29,9 @@ public class Department {
         Student st;
         while (true) {
             id = scan.nextInt();
-            if(id == 0)
+            if(id==0)
                 break;
-            st = new Student();
+            st = new Student(id);
             st.read(scan, this);
             stList.add(st);
         }
@@ -47,25 +46,6 @@ public class Department {
     void printAllStudent() {
         for (Student st : stList) {
             st.print();
-        }
-    }
-
-    void printAllTeams() {
-        for (Team t : teamList) {
-            t.print();
-        }
-    }
-
-    void reanAllTeams() {
-        Team t = null;
-        String name;
-        while (true) {
-            name = scan.next();
-            if(name.equals("0"))
-                break;
-            t = new Team(name);
-            t.read(scan, this);
-            teamList.add(t);
         }
     }
 
@@ -85,6 +65,7 @@ public class Department {
     void mymain() {
         readAllLecture();
         readAllStudent();
+        printAllStudent();
     }
 
     public static void main(String[] args) {
