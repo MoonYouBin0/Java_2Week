@@ -11,27 +11,29 @@ public class Item {
         this.code = code;
     }
 
-    public boolean matchesItem(String num){
-            if ((""+ this.num).contains(num))
-                return true;
-            else if((""+price).contains(num))
-                return true;
-            else if ((code).contains(num))
-                return true;
-            else if ((name).contains(num))
-                return true;
-            else
-                return false;
+    boolean matches(String stock){
+        if((""+this.num).equals(stock))
+            return true;
+        else if((""+price).equals(stock))
+            return true;
+        else if ((code).equals(stock))
+            return true;
+        else if ((name).equals(stock))
+            return true;
+        else
+            return false;
     }
+
 
     void read(Scanner scan, int num){
         this.num=num;
+        this.price = price;
         name = scan.next();
         price = scan.nextInt();
     }
 
     void print(){
-    System.out.printf("[%d] %s %s (%d원)\n", num, code, name, price);
+        System.out.printf("[%d] %s %s (%d원)\n", num, code, name, price);
     }
 
 }
