@@ -16,7 +16,6 @@ public class Food {
 	}
 
 	void printNoLn() {
-		// 빵-샌드위치 (468kcal/개)
 		System.out.format("%s-%s (%dkcal/%s)", type, name, cal, unit);
 	}
 
@@ -26,21 +25,20 @@ public class Food {
 	}
 
 	void printEat(int n, String u) {
-		// 우유 100ml(0kcal) - 125kcal/1개
-		System.out.format("%s %d%s(%dkcal)", name, n, u, getKcal(n, u));
-		System.out.format(" - %dkcal/%d%s", cal, 1, unit);
-		printDetail(n, u);
+		int kcal = getKcal(n, u);
+		System.out.format("%s %d%s(%dkcal)", name, n, u, kcal);
+		if (!u.equals(unit)) {
+			int baseKcal = cal;
+			System.out.format(" - %dkcal/%d%s -> %dkcal*%d/%d%s=%dkcal", baseKcal, 1, unit, baseKcal, n, 1, u, kcal);
+		}
 		System.out.println();
 	}
-	void printDetail(int n, String u) {}
 
 	int getKcal(int n, String u) {
 		return n * cal;
 	}
 
 	public boolean matches(String name) {
-			if ((CaloryMain.foods).equals(name))
-				return true;
-			return false;
+		return this.name.equals(name);
 	}
 }
