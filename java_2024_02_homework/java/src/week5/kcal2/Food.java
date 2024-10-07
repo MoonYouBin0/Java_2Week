@@ -29,17 +29,15 @@ public class Food {
         // 우유 100ml(0kcal) - 125kcal/1개
         System.out.format("%s %d%s(%dkcal)", name, n, u, getKcal(n, u));
         System.out.format(" - %dkcal/%d%s", cal, 1, unit);
-        printDetail(n, u);
         System.out.println();
     }
-    void printDetail(int n, String u) {}
 
     int getKcal(int n, String u) {
         return n * cal;
     }
 
     public boolean matches(String name) {
-        if ((CaloryMain.foods).equals(name))
+        if (this.name.equals(name))
             return true;
         return false;
     }

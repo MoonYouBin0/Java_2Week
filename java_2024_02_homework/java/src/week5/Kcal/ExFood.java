@@ -36,4 +36,5 @@ public class ExFood extends Food {
         }
         return super.getKcal(n, u);
     }
+
 }
