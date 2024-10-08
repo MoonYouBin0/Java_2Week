@@ -31,6 +31,6 @@ public class ExFood extends Food {
     }
 
     void printDetail(int n, String u) {
-        System.out.printf("(%d) -> %dkcal*%d/%d%s=%dkcal",weight, cal, n, weight, unit2, getKcal(n,u));
+        System.out.printf("(%d%s) -> %dkcal*%d/%d%s=%dkcal",weight, unit2, cal, n, weight, unit2, getKcal(n,u));
     }
 }
